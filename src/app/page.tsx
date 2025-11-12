@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, DollarSign, Users, Dumbbell, Activity } from "lucide-react";
+import { Heart, DollarSign, Users } from "lucide-react";
 import Link from "next/link";
-import StreamCard from "@/components/StreamCard";
 
 export default function Home() {
   return (
@@ -71,33 +70,11 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Two Stream Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
-          <StreamCard
-            icon={Dumbbell}
-            title="Coaching"
-            description={`Build local training pods and youth camps with Cordone Fit.\n\nEach pod: 10 athletes × $250 = $2,500 gross → 50/50 split = $1,250 net.`}
-            ctaText="See Coaching Breakdown"
-            ctaLink="/projections#coaching"
-            iconColor="text-sky-600"
-            delay={0.6}
-          />
-          <StreamCard
-            icon={Activity}
-            title="GoFast"
-            description={`Free app community + 2% conversion commerce layer.\n\nAvg order $50 → 2% of visitors purchase → drives scalable revenue.`}
-            ctaText="See GoFast Breakdown"
-            ctaLink="/projections#gofast"
-            iconColor="text-cyan-600"
-            delay={0.7}
-          />
-        </div>
-
         {/* Primary CTA */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.6 }}
           className="flex justify-center"
         >
           <Link

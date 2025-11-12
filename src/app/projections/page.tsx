@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Dumbbell, Activity } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
+import StreamCard from "@/components/StreamCard";
 import ProjectionChart from "@/components/ProjectionChart";
 
 const coachingItems = [
@@ -97,18 +99,40 @@ export default function Projections() {
           </p>
         </motion.div>
 
+        {/* Two Stream Cards */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+          <StreamCard
+            icon={Dumbbell}
+            title="Coaching"
+            description={`Build local training pods and youth camps with Cordone Fit.\n\nEach pod: 10 athletes × $250 = $2,500 gross → 50/50 split = $1,250 net.`}
+            ctaText="See Breakdown Below"
+            ctaLink="#coaching"
+            iconColor="text-sky-600"
+            delay={0.3}
+          />
+          <StreamCard
+            icon={Activity}
+            title="GoFast"
+            description={`Free app community + 2% conversion commerce layer.\n\nAvg order $50 → 2% of visitors purchase → drives scalable revenue.`}
+            ctaText="See Breakdown Below"
+            ctaLink="#gofast"
+            iconColor="text-cyan-600"
+            delay={0.4}
+          />
+        </div>
+
         {/* Progress Bar */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
           className="max-w-2xl mx-auto mb-12"
         >
           <div className="bg-gray-200 rounded-full h-8 overflow-hidden shadow-inner">
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${progressPercentage}%` }}
-              transition={{ delay: 0.6, duration: 1 }}
+              transition={{ delay: 0.7, duration: 1 }}
               className="bg-gradient-to-r from-sky-500 to-cyan-600 h-full rounded-full flex items-center justify-center"
             >
               <span className="text-white text-sm font-semibold">
@@ -127,7 +151,7 @@ export default function Projections() {
             title="A. Coaching Stream"
             items={coachingItems}
             total={coachingTotal}
-            delay={0.5}
+            delay={0.6}
           />
         </div>
 
@@ -137,7 +161,7 @@ export default function Projections() {
             title="B. GoFast Stream"
             items={goFastItems}
             total={goFastTotal}
-            delay={0.7}
+            delay={0.8}
           />
         </div>
 
@@ -145,7 +169,7 @@ export default function Projections() {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.9 }}
+          transition={{ delay: 1 }}
           className="bg-gradient-to-r from-sky-600 to-cyan-600 rounded-lg shadow-xl p-8 text-white max-w-2xl mx-auto mb-12"
         >
           <div className="text-center">
@@ -165,7 +189,7 @@ export default function Projections() {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 1.1 }}
           className="text-center mb-8"
         >
           <p className="text-gray-600 text-lg mb-6">
