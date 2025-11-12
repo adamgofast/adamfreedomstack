@@ -81,7 +81,7 @@ export default function Home() {
             href="/projections"
             className="bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg py-4 px-10 rounded-lg transition-colors shadow-lg hover:shadow-xl"
           >
-            See How It Adds Up
+            How I'll Get There
           </Link>
         </motion.div>
       </div>
