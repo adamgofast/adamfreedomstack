@@ -78,7 +78,7 @@ export default function Home() {
           className="flex justify-center"
         >
           <Link
-            href="/projections"
+            href="/revenue"
             className="bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg py-4 px-10 rounded-lg transition-colors shadow-lg hover:shadow-xl"
           >
             How I'll Get There
