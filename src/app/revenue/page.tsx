@@ -1,81 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Dumbbell, Activity } from "lucide-react";
+import { Dumbbell, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useEffect } from "react";
 import StreamCard from "@/components/StreamCard";
-import ProjectionChart from "@/components/ProjectionChart";
 
-const coachingItems = [
-  {
-    label: "Winter Pod",
-    calculation: "10 athletes × $250 × 50% = $1,250",
-    amount: 1250,
-    emoji: "💪",
-  },
-  {
-    label: "Pre-Spring Pod",
-    calculation: "10 athletes × $250 × 50% = $1,250",
-    amount: 1250,
-    emoji: "🏃",
-  },
-  {
-    label: "Extra School",
-    calculation: "10 athletes × $250 × 50% = $1,250",
-    amount: 1250,
-    emoji: "🏫",
-  },
-];
-
-const coachingTotal = coachingItems.reduce((sum, item) => sum + item.amount, 0);
-
-const goFastItems = [
-  {
-    label: "Monthly Visitors",
-    calculation: "10,000 active users",
-    amount: 0,
-    emoji: "👥",
-  },
-  {
-    label: "Conversion Rate",
-    calculation: "2% of visitors purchase",
-    amount: 0,
-    emoji: "📊",
-  },
-  {
-    label: "Average Order Value",
-    calculation: "$50 per purchase",
-    amount: 0,
-    emoji: "💰",
-  },
-  {
-    label: "Monthly Revenue",
-    calculation: "10,000 × 2% × $50 = $10,000",
-    amount: 10000,
-    emoji: "🚀",
-  },
-];
-
-const goFastTotal = goFastItems[goFastItems.length - 1].amount;
-
-const combinedTotal = coachingTotal + goFastTotal;
-const goalAmount = 6000;
-const progressPercentage = Math.min((combinedTotal / goalAmount) * 100, 100);
-
-export default function Projections() {
-  useEffect(() => {
-    // Handle hash scrolling after component mounts
-    if (window.location.hash) {
-      const element = document.querySelector(window.location.hash);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 300);
-      }
-    }
-  }, []);
-
+export default function Revenue() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -92,10 +22,10 @@ export default function Projections() {
           className="text-center mb-12"
         >
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            Financial Projection
+            Revenue Streams
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Target: $6,000 per month
+            Here's what these are — here's what they mean in $$$
           </p>
         </motion.div>
 
@@ -104,84 +34,48 @@ export default function Projections() {
           <StreamCard
             icon={Dumbbell}
             title="Coaching"
-            description={`Build local training pods and youth camps with Cordone Fit.\n\nEach pod: 10 athletes × $250 = $2,500 gross → 50/50 split = $1,250 net.`}
-            ctaText="See Breakdown Below"
-            ctaLink="#coaching"
+            description={`Build local training pods and youth camps with Cordone Fit.\n\nEach pod: 10 athletes × $250 = $2,500 gross → 50/50 split = $1,250 net.\n\nPotential: $2,500 - $3,750/month`}
+            ctaText="See Projections"
+            ctaLink="/revenue/projections#coaching"
             iconColor="text-sky-600"
             delay={0.3}
           />
           <StreamCard
             icon={Activity}
             title="GoFast"
-            description={`Free app community + 2% conversion commerce layer.\n\nAvg order $50 → 2% of visitors purchase → drives scalable revenue.`}
-            ctaText="See Breakdown Below"
-            ctaLink="#gofast"
+            description={`Free app community + 2% conversion commerce layer.\n\nAvg order $50 → 2% of visitors purchase → drives scalable revenue.\n\nPotential: $10,000/month at scale`}
+            ctaText="See Projections"
+            ctaLink="/revenue/projections#gofast"
             iconColor="text-cyan-600"
             delay={0.4}
           />
         </div>
 
-        {/* Progress Bar */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="max-w-2xl mx-auto mb-12"
-        >
-          <div className="bg-gray-200 rounded-full h-8 overflow-hidden shadow-inner">
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: `${progressPercentage}%` }}
-              transition={{ delay: 0.7, duration: 1 }}
-              className="bg-gradient-to-r from-sky-500 to-cyan-600 h-full rounded-full flex items-center justify-center"
-            >
-              <span className="text-white text-sm font-semibold">
-                {progressPercentage.toFixed(0)}%
-              </span>
-            </motion.div>
-          </div>
-          <p className="text-center text-gray-600 mt-2">
-            Combined streams: ${combinedTotal.toLocaleString()}/month
-          </p>
-        </motion.div>
-
-        {/* Coaching Stream */}
-        <div id="coaching" className="scroll-mt-20">
-          <ProjectionChart
-            title="A. Coaching Stream"
-            items={coachingItems}
-            total={coachingTotal}
-            delay={0.6}
-          />
-        </div>
-
-        {/* GoFast Stream */}
-        <div id="gofast" className="scroll-mt-20">
-          <ProjectionChart
-            title="B. GoFast Stream"
-            items={goFastItems}
-            total={goFastTotal}
-            delay={0.8}
-          />
-        </div>
-
-        {/* Combined Total */}
+        {/* Combined Summary */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="bg-gradient-to-r from-sky-600 to-cyan-600 rounded-lg shadow-xl p-8 text-white max-w-2xl mx-auto mb-12"
+          transition={{ delay: 0.6 }}
+          className="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto mb-12"
         >
           <div className="text-center">
-            <h3 className="text-2xl font-semibold mb-2">Combined Monthly Total</h3>
-            <div className="text-5xl font-bold mb-2">
-              ${combinedTotal.toLocaleString()}
-            </div>
-            <p className="text-sky-100">
-              {combinedTotal >= goalAmount
-                ? "✅ Goal achieved! Freedom unlocked."
-                : `$${(goalAmount - combinedTotal).toLocaleString()} away from goal`}
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Combined Potential
+            </h2>
+            <p className="text-xl text-gray-700 mb-6">
+              These two streams combine to exceed the $6,000/month goal
             </p>
+            <div className="flex items-center justify-center gap-2 text-2xl font-bold text-sky-600 mb-6">
+              <span>$13,750</span>
+              <span className="text-gray-400">/month</span>
+            </div>
+            <Link
+              href="/revenue/projections"
+              className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg py-4 px-10 rounded-lg transition-colors shadow-lg hover:shadow-xl"
+            >
+              See Full Projections Outlook
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </motion.div>
 
@@ -189,17 +83,14 @@ export default function Projections() {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.1 }}
-          className="text-center mb-8"
+          transition={{ delay: 0.7 }}
+          className="text-center"
         >
-          <p className="text-gray-600 text-lg mb-6">
-            Built with ❤️ by Adam — Freedom starts with belief.
-          </p>
           <Link
             href="/"
-            className="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-xl inline-block"
+            className="text-sky-600 hover:text-sky-700 font-semibold inline-block"
           >
-            Back to Home
+            ← Back to Home
           </Link>
         </motion.div>
       </div>
