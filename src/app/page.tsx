@@ -24,7 +24,7 @@ export default function Home() {
             Welcome to the Freedom Stack
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
-            Life's about following passions and building true financial freedom.
+            Life&apos;s about following passions and building true financial freedom.
           </p>
         </motion.div>
 
@@ -81,7 +81,7 @@ export default function Home() {
             href="/revenue"
             className="bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg py-4 px-10 rounded-lg transition-colors shadow-lg hover:shadow-xl"
           >
-            How I'll Get There
+            How I&apos;ll Get There
           </Link>
         </motion.div>
       </div>

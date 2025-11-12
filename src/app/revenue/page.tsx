@@ -25,7 +25,7 @@ export default function Revenue() {
             Revenue Streams
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Here's what these are — here's what they mean in $$$
+            Here&apos;s what these are — here&apos;s what they mean in $$$
           </p>
         </motion.div>
 
