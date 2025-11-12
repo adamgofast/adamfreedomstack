@@ -58,7 +58,7 @@ export default function ProjectionChart({
           className="flex items-center justify-between pt-4 mt-4 border-t-2 border-gray-300"
         >
           <div className="text-xl font-bold text-gray-900">Subtotal</div>
-          <div className="text-2xl font-bold text-indigo-600">
+          <div className="text-2xl font-bold text-sky-600">
             ${total.toLocaleString()}
           </div>
         </motion.div>
@@ -66,4 +66,3 @@ export default function ProjectionChart({
     </motion.div>
   );
 }
-

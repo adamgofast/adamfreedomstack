@@ -42,7 +42,7 @@ export default function StreamCard({
       <div className="text-center">
         <Link
           href={ctaLink}
-          className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+          className="inline-block bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
         >
           {ctaText}
         </Link>
@@ -50,4 +50,3 @@ export default function StreamCard({
     </motion.div>
   );
 }
-

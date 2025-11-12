@@ -79,7 +79,7 @@ export default function Projections() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100"
+      className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-100"
     >
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
@@ -109,7 +109,7 @@ export default function Projections() {
               initial={{ width: 0 }}
               animate={{ width: `${progressPercentage}%` }}
               transition={{ delay: 0.6, duration: 1 }}
-              className="bg-gradient-to-r from-green-500 to-emerald-600 h-full rounded-full flex items-center justify-center"
+              className="bg-gradient-to-r from-sky-500 to-cyan-600 h-full rounded-full flex items-center justify-center"
             >
               <span className="text-white text-sm font-semibold">
                 {progressPercentage.toFixed(0)}%
@@ -146,14 +146,14 @@ export default function Projections() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.9 }}
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-xl p-8 text-white max-w-2xl mx-auto mb-12"
+          className="bg-gradient-to-r from-sky-600 to-cyan-600 rounded-lg shadow-xl p-8 text-white max-w-2xl mx-auto mb-12"
         >
           <div className="text-center">
             <h3 className="text-2xl font-semibold mb-2">Combined Monthly Total</h3>
             <div className="text-5xl font-bold mb-2">
               ${combinedTotal.toLocaleString()}
             </div>
-            <p className="text-indigo-100">
+            <p className="text-sky-100">
               {combinedTotal >= goalAmount
                 ? "✅ Goal achieved! Freedom unlocked."
                 : `$${(goalAmount - combinedTotal).toLocaleString()} away from goal`}
@@ -173,7 +173,7 @@ export default function Projections() {
           </p>
           <Link
             href="/"
-            className="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-xl inline-block"
+            className="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-xl inline-block"
           >
             Back to Home
           </Link>
@@ -182,4 +182,3 @@ export default function Projections() {
     </motion.div>
   );
 }
-
